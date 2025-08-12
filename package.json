@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node startup-api/src/app.ts",
     "build":"tsc",
-    "start": "node dist/app.js"
+    "start": "node ./dist/app.js"
   },
   "repository": {
     "type": "git",
