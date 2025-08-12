@@ -4,9 +4,10 @@ info:
   description: API to manage a list of startups 🚀
   version: 1.0.0
 
+
 servers:
-  - url: http://localhost:5000/api
-    description: Local server
+  - url: https://startup-api-6pkn.onrender.com/api
+    description: Startup-Api
 
 tags:
   - name: Startups
