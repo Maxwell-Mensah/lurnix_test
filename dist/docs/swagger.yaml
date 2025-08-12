@@ -1,0 +1,85 @@
+openapi: 3.0.0
+info:
+  title: Startups API
+  description: API to manage a list of startups 🚀
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:5000/api
+    description: Local server
+
+tags:
+  - name: Startups
+    description: Startup management
+
+paths:
+  /startups:
+    get:
+      summary: List all startups
+      tags: [Startups]
+      responses:
+        200:
+          description: List of startups returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Startup'
+        500:
+          description: Internal server error
+    post:
+      summary: Create a new startup
+      tags: [Startups]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Startup'
+      responses:
+        201:
+          description: Startup created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Startup'
+        400:
+          description: Invalid request (missing or incorrect data)
+        500:
+          description: Internal server error
+
+components:
+  schemas:
+    Startup:
+      type: object
+      required:
+        - name
+        - founder
+        - description
+        - yearCreated
+      properties:
+        id:
+          type: string
+          description: Unique startup identifier
+        name:
+          type: string
+          description: Name of the startup
+          example: SpaceX
+        founder:
+          type: string
+          description: Founder’s name
+          example: Elon Musk
+        description:
+          type: string
+          description: Brief description of the startup
+          example: Aerospace company developing rockets and spacecraft
+        yearCreated:
+          type: integer
+          description: Year of creation
+          example: 2002
+        createdAt:
+          type: string
+          format: date-time
+          description: Creation date in the database
+          example: 2025-08-12T14:00:00Z
