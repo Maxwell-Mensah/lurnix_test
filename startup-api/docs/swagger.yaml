@@ -6,7 +6,7 @@ info:
 
 servers:
   - url: https://startup-api-6pkn.onrender.com/api
-    description: Local server
+    description: Startup-Api
 
 tags:
   - name: Startups
