@@ -59,9 +59,6 @@ components:
         - description
         - yearCreated
       properties:
-        id:
-          type: string
-          description: Unique startup identifier
         name:
           type: string
           description: Name of the startup
@@ -78,8 +75,3 @@ components:
           type: integer
           description: Year of creation
           example: 2002
-        createdAt:
-          type: string
-          format: date-time
-          description: Creation date in the database
-          example: 2025-08-12T14:00:00Z
